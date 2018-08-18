@@ -61,20 +61,14 @@ namespace DatingApp.API
             }
             else
             {
-<<<<<<< HEAD
                 //handle all error from server instead of using try catch everywhere.
-=======
->>>>>>> 6cb9c64912fc455099c9da9218d434a790e4bb00
                 app.UseExceptionHandler(builder => {
                     builder.Run(async context => {
                         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                         var error = context.Features.Get<IExceptionHandlerFeature>();
                         if (error != null)
                         {
-<<<<<<< HEAD
                             // this is the extention method from helper folder. we send the message string.
-=======
->>>>>>> 6cb9c64912fc455099c9da9218d434a790e4bb00
                             context.Response.AddApplicationError(error.Error.Message);
                             await context.Response.WriteAsync(error.Error.Message);
                         }
